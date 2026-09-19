@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkillBridge — AI Competency Gap Finder</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SkillBridge</h1>
+    <p class="tagline">Upload your notes. Find your gaps. Learn smarter.</p>
+  </header>
+
+  <main id="app">
+
+    <!-- STEP 1: Upload -->
+    <section id="upload-view" class="view active">
+      <h2>1. Add your study material</h2>
+      <textarea id="text-input" placeholder="Paste your notes / topic text here..." rows="8"></textarea>
+      <p class="or">— or —</p>
+      <input type="file" id="file-input" accept=".pdf,.txt" />
+      <div class="row">
+        <label for="num-questions">Number of questions:</label>
+        <input type="number" id="num-questions" value="8" min="3" max="15" />
+      </div>
+      <button id="generate-btn">Generate Quiz</button>
+      <p id="upload-status" class="status"></p>
+    </section>
+
+    <!-- STEP 2: Quiz -->
+    <section id="quiz-view" class="view">
+      <h2>2. Test yourself</h2>
+      <div id="quiz-progress"></div>
+      <div id="quiz-container"></div>
+      <button id="submit-quiz-btn">Submit Answers</button>
+    </section>
+
+    <!-- STEP 3: Results -->
+    <section id="results-view" class="view">
+      <h2>3. Your competency report</h2>
+      <div id="score-summary"></div>
+      <div id="weak-topics"></div>
+      <div id="recommendations"></div>
+      <button id="restart-btn">Try New Material</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
